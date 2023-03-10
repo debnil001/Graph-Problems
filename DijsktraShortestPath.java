@@ -86,7 +86,6 @@ class Solution
     {
         // Write your code here
         int dist[]=new int[V];
-        boolean vis[]=new boolean[V];
         for(int i=0;i<V;i++){
             if(i!=S){
                 dist[i]=Integer.MAX_VALUE;

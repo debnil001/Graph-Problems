@@ -5,7 +5,7 @@
 package Graph;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.PriorityQueue;
 
 /**
@@ -46,15 +46,15 @@ class PrimsMST{
 	       for(int i=0;i<graph.length;i++)
                    graph[i]=new ArrayList<>();
 //               System.out.println(edges.length);
-	       for(int i=0;i<edges.length;i++){
-                   int curr=edges[i][0];
-                   int dest=edges[i][1];
-                   int wt=edges[i][2];
-                   System.out.println(curr+" "+dest+" "+wt);
-	           graph[curr].add(new Edge(dest,wt));
-                   graph[dest].add(new Edge(curr,wt));
+        for (int[] edge : edges) {
+            int curr = edge[0];
+            int dest = edge[1];
+            int wt = edge[2];
+            System.out.println(curr+" "+dest+" "+wt);
+            graph[curr].add(new Edge(dest,wt));
+            graph[dest].add(new Edge(curr,wt));
 //	           graph[edges[i][1]].add(new Edge(edges[i][0],edges[i][2]));
-	       }
+        }
 //0 1 3
 //0 3 3
 //0 5 10
@@ -63,9 +63,9 @@ class PrimsMST{
 //0 6 8
 //0 5 6
                 System.out.println(graph.length);
-               for(int i=0;i<graph.length;i++){
-                   System.out.println(graph[i]);
-               }
+        for (ArrayList<Edge> graph1 : graph) {
+            System.out.println(graph1);
+        }
 	       PriorityQueue<Pair> pq=new PriorityQueue<>();
 	       pq.add(new Pair(0,0));
                int cost=0;
